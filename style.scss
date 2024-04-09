@@ -1,0 +1,14 @@
+@import "./styles/components/fonts";
+@import "./styles/components/global";
+
+@import "./styles/pages/sidebar";
+@import "./styles/pages/main";
+@import "./styles/pages/media";
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hidden{
+    display: none;
+}

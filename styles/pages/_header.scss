@@ -1,0 +1,28 @@
+@use "../components/variables";
+@use "../components/mixins";
+
+.header{
+    @include mixins.d-flex(flex, center, space-between, 20px);
+    .navigation{
+        @include mixins.d-flex(flex, center, center, 70px);
+        .item-link{
+            color: #fff;
+            font-weight: 500;
+            font-size: 18px;
+            @extend %transition;
+            &:hover{
+                background-color: #fff;
+                color: variables.$light-blue;
+                padding: 7px 25px;
+                border-radius: 100px;
+            }
+        }
+    }
+    .search-panel{
+        @include mixins.d-flex(flex, center, center, 20px);
+        img{
+            cursor: pointer;
+            
+        }
+    }
+}

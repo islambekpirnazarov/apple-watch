@@ -1,0 +1,116 @@
+@use "../components/variables";
+@use "../components/mixins";
+@import "./header";
+
+.light-black{
+    background-color: variables.$light-black;
+}
+.light-blue{
+    background-color: variables.$light-blue;
+}
+.light-green{
+    background-color: variables.$light-green;
+}
+.light-pink{
+    background-color: variables.$light-pink;
+}
+.border{
+    border: 5px solid #fff;
+    transform: scale(1.5);
+}
+.transition{
+    transition: all .8s ease;
+}
+.main{
+    padding: 20px 35px;
+    background: variables.$background;
+    width: 94vw;
+    height: 100vh;
+    border-radius: 15px 0 0 15px;
+    .home{
+        overflow: hidden;
+        @include mixins.d-flex(flex, center, space-between, 20px);
+        .text-content{
+            flex: 1.5;
+        }
+        .heading{
+            color: #fff;
+            font-weight: 700;
+            font-size: 60px;
+            line-height: 70px
+        }
+        .description{
+            @extend .heading;
+            font-weight: 400;
+        }
+        .btn-outline{
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            color: #fff;
+            outline: none;
+            background-color: transparent;
+            border: 2px solid #fff;
+            padding: 7px 40px;
+            border-radius: 40px;
+            margin-top: 15px;
+            &:hover{
+                cursor: pointer;
+                @extend %transition;
+                background-color: variables.$light-blue;
+            }
+        }
+        .img-content{
+            @include mixins.d-flex(flex, center, center, 15px);
+            flex: 1;
+            padding: 15px;
+            img{
+                width: 400px;
+                height: 400px;
+            }
+            .btn-solid{
+                display: block;
+                margin-bottom: 15px;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                outline: none;
+                border: 1px solid #fff;
+                box-shadow: 1.5px 1.5px 1.5px 1.5px rgba(220, 220, 220, 0.7);
+                cursor: pointer;
+            }
+        }
+
+    }
+    .main-footer{
+        margin-top: 20px;
+        @include mixins.d-flex(flex, center, end, 30px);
+        .main-footer__item{
+            width: 130px;
+            height: 70px;
+            border-radius: 20px;
+            cursor: pointer;
+            position: relative;
+            img{
+                width: 90px !important;
+                position: absolute;
+                top: -30px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+}
+
+.animation{
+    animation-name: animate;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+}
+@keyframes animate {
+    from{
+        transform: translateX(400px);
+    }
+    to{
+        transform: translateX(0);
+    }
+}

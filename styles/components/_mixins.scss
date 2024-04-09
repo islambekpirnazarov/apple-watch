@@ -1,0 +1,9 @@
+@mixin d-flex($flex, $items, $content, $gap) {
+    display: $flex;
+    align-items: $items;
+    justify-content: $content;
+    gap: $gap;
+}
+%transition{
+    transition: all 0.6s ease-in-out;
+}

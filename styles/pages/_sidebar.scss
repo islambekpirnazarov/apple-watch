@@ -1,0 +1,47 @@
+@use "../components/variables";
+@use "../components/mixins";
+
+.active{
+    width: 20vw !important;
+}
+.nav-menu{
+    display: none;
+}
+.sidebar.active .nav-menu{
+    display: block;
+}
+.sidebar{
+    background-color: #fff;
+    z-index: 999;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 6vw;
+    min-height: 100vh;
+    .menu{
+        font-size: 30px;
+        color: variables.$light-blue;
+        i{
+            cursor: pointer;
+            @extend %transition;
+            &:hover{
+                color: variables.$light-black;
+            }
+        }
+    }
+    .social-network{
+        @include mixins.d-flex(flex, left, center, 20px);
+        flex-direction: column;
+        color: variables.$light-blue;
+        font-size: 25px;
+        i{
+            cursor: pointer;
+            @extend %transition;
+            &:hover{
+                color: variables.$light-black;
+            }
+        }
+    }
+}
